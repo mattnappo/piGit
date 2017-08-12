@@ -1,0 +1,19 @@
+{
+  "name": "electronapp",
+  "version": "1.0.0",
+  "description": "a simple electron app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxblackacidxx/electronApp.git"
+  },
+  "author": "xxblackacidxx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xxblackacidxx/electronApp/issues"
+  },
+  "homepage": "https://github.com/xxblackacidxx/electronApp#readme"
+}
