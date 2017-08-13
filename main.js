@@ -1,33 +1,45 @@
 const electron = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
-
 const path = require('path')
 const url = require('url')
-
-let mainWindow
+var ipc = require('ipc')
+let loginWindow
+let registerWindow
+function show() {
+  registerWindow.show()
+}
 
 function createWindow () {
-  // Create the browser window.
-  //mainWindow = new BrowserWindow({width: 350, height: 285, frame:false})
-  mainWindow = new BrowserWindow({width: 1000, height: 1000, frame:false})
-
-  // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
+  //loginWindow = new BrowserWindow({width: 350, height: 285, frame:false})
+  loginWindow = new BrowserWindow({width: 500, height: 500, frame:false})
+  loginWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'login.html'),
     protocol: 'file:',
     slashes: true
   }))
-
-  mainWindow.webContents.openDevTools()
-
-  mainWindow.on('closed', function () {
-    mainWindow = null
+  loginWindow.webContents.openDevTools()
+  loginWindow.on('closed', function () {
+    loginWindow = null
   })
+
 }
 
-app.on('ready', createWindow)
 
+app.on('ready', createWindow)
+exports.regWindow = () => {
+  registerWindow = new BrowserWindow({width: 500, height: 500, frame:false})
+  registerWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'register.html'),
+    protocol: 'file:',
+    slashes: true,
+    show: false
+  }))
+  registerWindow.webContents.openDevTools()
+  registerWindow.on('closed', function () {
+    registerWindow = null
+  })
+}
 //Annoying OSX stuff
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -37,7 +49,7 @@ app.on('window-all-closed', function () {
 })
 
 app.on('activate', function () {
-  if (mainWindow === null) {
+  if (loginWindow === null) {
     createWindow()
   }
 })
