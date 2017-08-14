@@ -13,16 +13,13 @@ function validate() {
   username = document.getElementById('username').value;
   password = document.getElementById('password').value;
 
-  var usrInfo = Titanium.Filesystem.getFile(homeDir, "./users/" + username + ".usr");
-  if(usrInfo.exists()) {
-
-    getLogin("./users/" + username + ".usr");
-    if(username == cUsername && password == cPassword) {
-      alert("hi");
-    } else {
-      alert("bye");
-    }
+  getLogin("./users/" + username + ".usr");
+  if(username == cUsername && password == cPassword) {
+    main.gitWindow();
+  } else {
+    alert("bye");
   }
+
 }
 //Open register window
 function register() {
