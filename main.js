@@ -39,7 +39,7 @@ exports.regWindow = () => {
   })
 }
 exports.gitWindow = () => {
-  gitWindow = new BrowserWindow({width: 500, height: 500, fullscreen:true})
+  gitWindow = new BrowserWindow({width: 1250, height: 750})
   gitWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'git.html'),
     protocol: 'file:',

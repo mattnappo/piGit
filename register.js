@@ -12,6 +12,7 @@ function saveUser(user, pass) {
     fclose(xFile);
   }
 }
+
 function register() {
   username = document.getElementById('username').value;
   password = document.getElementById('password').value;
