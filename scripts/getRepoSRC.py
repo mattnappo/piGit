@@ -33,4 +33,4 @@ class Connection():
         with open("../repos/info.json", "w") as jFile:
             jFile.write(data)
             #json.dump(data, jFile)
-conn = Connection("ip.json")
+Connection("./ip.json")

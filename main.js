@@ -46,7 +46,7 @@ exports.gitWindow = () => {
     slashes: true,
     show: false
   }))
-  // gitWindow.webContents.openDevTools()
+  gitWindow.webContents.openDevTools()
   gitWindow.on('closed', function () {
     gitWindow = null
   })
