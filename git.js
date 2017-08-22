@@ -14,10 +14,10 @@ function readFile(callback, fileName) {
   xobj.send(null);
 }
 function repoGrab() {
-  getRepos(function(repoList) {
-    for(var i = 0; i < raw.repos.length; i++) {
-      repos.append(raw.repos[i]);
-      document.getElementById('repos').innerHTML = document.getElementById('repos').innerHTML + '<div class="list-group-item"><a onclick="setRepo()" class="list-group-item">' + raw.repos[i] + '</a></div>';
+  getRepos(function(response) {
+    for(var i = 0; i < response.repos.length; i++) {
+      repos.push(response.repos[i]);
+      document.getElementById('repos').innerHTML = document.getElementById('repos').innerHTML + '<div class="list-group-item"><a onclick="setRepo()" class="list-group-item">' + repos[i] + '</a></div>';
     }
   });
 }
@@ -29,10 +29,10 @@ function getRepos(callback) {
   });
   c.on('ready', function() {
     console.log('Connection :: ready');
-    c.exec('ls ./Repos/', function(err, stream) {
+    c.exec('python getRepos.py;cat repos.json', function(err, stream) {
       if (err) throw err;
       stream.on('data', function(data) {
-        repos = data.toArray();
+        repos = JSON.parse(data.toString());
       });
 
       stream.on('close', function() {
