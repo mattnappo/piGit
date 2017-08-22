@@ -1,14 +1,11 @@
-var currRepo = "";
+var repos = [];
 var executablePath = "./scripts/getRepo.exe";
-const {shell} = require('electron');
+var SSHConnection = require('ssh2');
 var fs = require('fs');
-function setRepo(id) {
-  currRepo = id;
-}
-function readFile(callback) {
+function readFile(callback, fileName) {
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
-  xobj.open('GET', './repos/info.json', true);
+  xobj.open('GET', './repos/'+ fileName, true);
   xobj.onreadystatechange = function () {
     if (xobj.readyState == 4 && xobj.status == "200") {
       callback(xobj.responseText);
@@ -16,23 +13,50 @@ function readFile(callback) {
   };
   xobj.send(null);
 }
-function getReposX() {
-  //shell.openItem("./scripts/getRepo.exe");
-  getRepos();
-}
-function getRepos() {
-  readFile(function(response) {
-    var raw = JSON.parse(response);
+function repoGrab() {
+  getRepos(function(repoList) {
     for(var i = 0; i < raw.repos.length; i++) {
+      repos.append(raw.repos[i]);
       document.getElementById('repos').innerHTML = document.getElementById('repos').innerHTML + '<div class="list-group-item"><a onclick="setRepo()" class="list-group-item">' + raw.repos[i] + '</a></div>';
     }
   });
 }
+function getRepos(callback) {
+  var repos = "";
+  var c = new SSHConnection();
+  c.on('connect', function() {
+    console.log('Connection :: connect');
+  });
+  c.on('ready', function() {
+    console.log('Connection :: ready');
+    c.exec('ls ./Repos/', function(err, stream) {
+      if (err) throw err;
+      stream.on('data', function(data) {
+        repos = data.toArray();
+      });
 
-function getSourceX() {
-  //shell.openItem("./scripts/cloneRepo.exe");
-  getSource();
+      stream.on('close', function() {
+        callback(repos);
+      });
+    });
+  });
+  c.on('error', function(err) {
+    console.log('Connection :: error :: ' + err);
+  });
+  c.on('end', function() {
+    console.log('Connection :: end');
+  });
+  c.on('close', function(had_error) {
+    console.log('Connection :: close');
+  });
+  c.connect({
+    host: 'mattnappo.ddns.net',
+    port: 22,
+    username: 'pi',
+    password: 'eatsleepoverclock'
+  });
 }
+
 function showFile(file) {
   readFile(function(response) {
     alert(response);
@@ -41,12 +65,12 @@ function showFile(file) {
 function showFolder(folder) {
   alert("lol");
 }
-function getSource() {
-  var files = fs.readdirSync("./repos/" + currRepo + "/");
+function getSource(repo) {
+  var files = fs.readdirSync("./repos/" + repo + "/");
   alert(files[0]);
   alert(files[1]);
   for(var i = 0; i < files.length; i++) {
-    if(fs.lstatSync("./repos/" + currRepo).isDirectory()) {
+    if(fs.lstatSync("./repos/" + repo).isDirectory()) {
       document.getElementById('workspace').innerHTML = document.getElementById('workspace').innerHTML + '<div class="list-group-item"><a onclick="showFolder(' + files[i] + ')" class="list-group-item">' + files[i] + '</a></div>';
     } else {
       document.getElementById('workspace').innerHTML = document.getElementById('workspace').innerHTML + '<div class="list-group-item"><a onclick="showFile(' + files[i] + ')" class="list-group-item">' + files[i] + '</a></div>';
