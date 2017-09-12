@@ -3,7 +3,8 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
-var ipc = require('ipc')
+//const ipc = require('ipc')
+
 let loginWindow
 let registerWindow
 let gitWindow
