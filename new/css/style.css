@@ -1,0 +1,40 @@
+@font-face {font-family: Rockwell;src: url('fonts/rockb.ttf');}
+
+h1 {
+	font-family: Rockwell;
+}
+
+.blue {
+	color: #1849a0;
+}
+
+.blue-btn {
+	background-color: #1849a0;
+	color: white;
+}
+
+.small {
+	max-width: 30%;
+}
+
+.center-div {
+	padding-top: 8%;
+	margin: 0 auto;
+}
+
+.red {
+	color: red;
+}
+
+.hide {
+	display: none;
+}
+
+.side {
+	float: left;
+}
+
+.padded {
+	padding-right: 32px;
+	padding-left: 32px;
+}

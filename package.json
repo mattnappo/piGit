@@ -1,7 +1,7 @@
 {
-  "name": "electronapp",
+  "name": "piGit",
   "version": "1.0.0",
-  "description": "a simple electron app",
+  "description": "GUI for my Raspberry Pi git server.",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
