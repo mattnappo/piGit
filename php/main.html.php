@@ -14,18 +14,30 @@
   <body>
 		<div class="w3-row">
 
-			<div class="blue-btn w3-container w3-quarter">
+			<div class="blue-btn w3-container tall w3-quarter">
 				<h1>PiGit</h1>
-				<h4>Repositories</h4>
-				<ul>
-					<?php include("main/listRepos.php"); ?>
-				</ul>
+				<?php
+					session_start();
+					if(isset($_GET['showf'])) {
+						include("main/listFiles.php");
+					} else {
+						include("main/listRepos.php");
+					}
+				?>
 			</div>
 
 			<div class="w3-container w3-threequarter">
-				<ul>
-					<?php include("main/listFiles.php"); ?>
-				</h1>
+				<div class="w3-container">
+					<?php
+						if(!isset($_GET['showf'])) {
+							include("main/listFiles.php");
+						}
+					?>
+				</div>
+
+				<div class="w3-container">
+					<?php include("main/showFile.php"); ?>
+				</div>
   		</div>
 
 		</div>

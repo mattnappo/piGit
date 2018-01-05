@@ -1,1 +1,35 @@
 asdasd
+onfig --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 20 files changed, 102 insertions(+), 5 deletions(-)
+ rename php/.DS_Store => .DS_Store (74%)
+ create mode 100755 php/fonts/Monaco.ttf
+ mode change 100644 => 100755 php/fonts/ROCK.TTF
+ create mode 100644 php/main/authorize.php
+ create mode 100644 php/main/listFiles.php
+ create mode 100644 php/main/listRepos.php
+ create mode 100644 php/update.php
+ create mode 100644 php/users/q/repo1/repo1File1
+ create mode 100644 php/users/q/repo1/repo1File2
+ create mode 100644 php/users/q/repo1/repo1File3
+ create mode 100644 php/users/q/repo1/repo1Folder/repo1File1
+ create mode 100644 php/users/q/repo2/repo2File1
+ create mode 100644 php/users/q/repo2/repo2File2
+ create mode 100644 php/users/q/repo2/repo2File3
+ create mode 100644 php/users/q/repo2/repo2Folder/repo2File2
+Matts-MBP:piGit bolt$ git status
+On branch master
+nothing to commit, working tree clean
+Matts-MBP:piGit bolt$ git push origin master
+Counting objects: 25, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (25/25), 29.49 KiB | 7.37 MiB/s, done.
+Total 25 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To https://github.com/xxmattnappo/piGit.git
+   aa1f191..3a9f443  master -> mas

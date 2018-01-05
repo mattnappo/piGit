@@ -1,1 +1,21 @@
 asdasd
+inet6 fe80::c19e:7898:fce4:67c2%utun0 prefixlen 64 scopeid 0xd
+nd6 options=201<PERFORMNUD,DAD>
+utun1: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+inet6 fe80::801b:e44d:7ad8:da3a%utun1 prefixlen 64 scopeid 0xe
+nd6 options=201<PERFORMNUD,DAD>
+en5: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+ether ac:de:48:00:11:22
+inet6 fe80::aede:48ff:fe00:1122%en5 prefixlen 64 scopeid 0xc
+nd6 options=281<PERFORMNUD,INSECURE,DAD>
+media: autoselect
+status: active
+Matts-MBP:~ bolt$ cd ..
+Matts-MBP:Users bolt$ cd ..
+Matts-MBP:/ bolt$ cd Applications/XAMPP/htdocs/piGit/php/
+Matts-MBP:php bolt$ ls
+css			main.js
+fonts			main.php
+img			register.html.php
+index.html		register.js
+login.html.php		regi

@@ -1,1 +1,41 @@
 asdasdasdasdasd
+repo2 file 33333
+
+php/fonts/Monaco.ttf
+php/main/
+php/update.php
+php/users/q/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Matts-MBP:piGit bolt$ git add .
+Matts-MBP:piGit bolt$ git status
+On branch master
+Changes to be committed:
+(use "git reset HEAD <file>..." to unstage)
+
+renamed:    php/.DS_Store -> .DS_Store
+modified:   php/css/style.css
+new file:   php/fonts/Monaco.ttf
+modified:   php/fonts/ROCK.TTF
+modified:   php/login.php
+modified:   php/main.html.php
+modified:   php/main.php
+new file:   php/main/authorize.php
+new file:   php/main/listFiles.php
+new file:   php/main/listRepos.php
+modified:   php/register.php
+new file:   php/update.php
+new file:   php/users/q/repo1/repo1File1
+new file:   php/users/q/repo1/repo1File2
+new file:   php/users/q/repo1/repo1File3
+new file:   php/users/q/repo1/repo1Folder/repo1File1
+new file:   php/users/q/repo2/repo2File1
+new file:   php/users/q/repo2/repo2File2
+new file:   php/users/q/repo2/repo2File3
+new file:   php/users/q/repo2/repo2Folder/repo2File2
+
+Matts-MBP:piGit bolt$ git commit -m "Listing files and repositories working now"
+[master 3a9f443] Listing files and repositories working now
+Committer: Matt Nappo <bolt@Matts-MBP.fios-router.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they ar
