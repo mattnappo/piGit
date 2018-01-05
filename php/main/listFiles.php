@@ -1,4 +1,5 @@
 <?php
+// make a description box
 	if(!function_exists('showFiles')) {
 		function showFiles($class) {
 			$location = "users/" . $_SESSION['username'] . "/" . $_GET['selectedRepo'];

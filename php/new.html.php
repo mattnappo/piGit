@@ -21,21 +21,32 @@
 		    </div>
 		  </div>
 		</div>
-		<div class="w3-container small center-div">
-			<form method="post" action="login.html.php">
-				<h1 class="blue">PiGit</h1>
-        <label>
-				<input class="w3-input w3-border w3-round-large w3-margin-bottom" id="username" name="username" type="text">
-				<span class="red w3-margin-bottom hide" id="usernameNull">&nbsp;* Required field</span>
+    
+      <?php
+        session_start();
+        echo '
+        <div class="form">
+          <form method="post" action="new.html.php">
+            <div class="w3-container">
+              <div>
+                <label class="blue h1">' . $_SESSION["username"] . '</label>
+                <input class="blue borderlessInput h1" type="text"></input>
+              </div>
+        ';
+      ?>
+          		<input class="w3-input w3-border w3-round-large w3-margin-bottom" id="username" name="username" type="text">
+          		<span class="red w3-margin-bottom hide" id="usernameNull">&nbsp;* Required field</span>
 
-				<input class="w3-input w3-border w3-round-large w3-margin-bottom" id="password" name="password" type="password">
-				<span class="red w3-margin-bottom hide" id="passwordNull">&nbsp;* Required field</span>
+              <div class="right">
+                <button class="w3-button w3-round-large blue-btn padded" type="submit" name="login" onclick="login()">Login</button>
+                <a class="w3-margin-left cancel" href="main.html.php">Cancel</a>
+              </div>
+            </div>
+          </form>
+        </div>
 
-				<button class="w3-button w3-round-large blue-btn padded" type="submit" name="login" onclick="login()">Login</button>
-				<p>
-					Need an account? <a href="register.html.php">Register Here</a>.
-				</p>
-		</div>
 	</body>
-	<?php include('new.php'); ?>
+  <?php
+    include('main/authorize.php');
+  ?>
 </html>
