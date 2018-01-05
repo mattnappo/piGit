@@ -9,7 +9,7 @@
       $json = json_decode($rawJSON, true);
       foreach ($json["users"] as $key => $value) {
         if($username == $key && md5($password) == $value) {
-          $_SESSION["authorized"] = 1;
+          $_SESSION["username"] = $username;
           header("location: main.html.php");
           exit("");
         }

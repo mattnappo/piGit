@@ -1,7 +1,32 @@
 @font-face {font-family: Rockwell;src: url('../fonts/rockb.ttf');}
+@font-face {font-family: Monaco;src: url('../fonts/Monaco.ttf');}
 
+h4 {
+	font-family: monospace;
+	/*font-family: Arial;*/
+	/*font-family: Monaco;*/
+}
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+li {
+	padding: .3em 0;
+	margin: 1em 0;
+}
 h1 {
 	font-family: Rockwell;
+}
+
+.repo:hover {
+	text-decoration: underline;
+	color: white;
+}
+
+.repo {
+	font-family: monospace;
+	/*font-family: Arial;*/
+	/*font-family: Monaco;*/
 }
 
 .blue {

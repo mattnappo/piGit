@@ -21,6 +21,8 @@
       file_put_contents("users/users.json", "");
       fwrite($myfile, $newJSON);
       fclose($myfile);
+      $fname = "users/" . $username;
+      mkdir($fname);
       echo '<script>document.getElementById("registerSuccess").style.display = "block";</script>';
     } else {
       if(empty($username)) {
