@@ -1,5 +1,8 @@
 <?php
 // make a description box
+// Make folders work and make the side panel list the files in that folder when a file in the subfolder is selected. recursion?
+// When the folder is selected, make it list the files inside
+// when the file is selected, turn the side panel into a folder list-view
 	if(!function_exists('showFiles')) {
 		function showFiles($class) {
 			$location = "users/" . $_SESSION['username'] . "/" . $_GET['selectedRepo'];

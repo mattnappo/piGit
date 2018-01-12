@@ -1,8 +1,10 @@
 <?php
+  //<a class="repo" href="new.html.php">New</a>
+  $clickScript = "document.getElementById('newRepo').style.display = 'block'";
   echo '
     <h4>
       <a class="repo">Repositories</a> |
-      <a class="repo" href="new.html.php">New</a>
+      <a class="repo" onclick="' . $clickScript . '">New</a>
     </h4>
   ';
   $location = "users/" . $_SESSION['username'] . "/";

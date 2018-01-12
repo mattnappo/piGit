@@ -31,7 +31,7 @@
 				<input class="w3-input w3-border w3-round-large w3-margin-bottom" id="password" name="password" placeholder="Password" type="password">
 				<span class="red w3-margin-bottom hide" id="passwordNull">&nbsp;* Required field</span>
 
-				<button class="w3-button w3-round-large blue-btn padded" type="submit" name="login" onclick="login()">Login</button>
+				<button class="w3-button w3-round-large blue-btn padded" type="submit" name="login">Login</button>
 				<p>
 					Need an account? <a href="register.html.php">Register Here</a>.
 				</p>

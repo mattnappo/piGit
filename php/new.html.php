@@ -6,47 +6,49 @@
 
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="css/style.css">
-		<script type="text/javascript" src="login.js"></script>
+		<script type="text/javascript" src="new.js"></script>
 
-		<title>PiGit | Login</title>
+		<title>PiGit | New</title>
 	</head>
 
 	<body>
-		<div id="loginError" class="w3-modal">
-		  <div class="w3-modal-content">
-		    <div class="w3-container">
-		      <span onclick="document.getElementById('loginError').style.display='none'"
-		      class="w3-button w3-display-topright">&times;</span>
-		      <p>Your username or password is incorrect.</p>
-		    </div>
-		  </div>
-		</div>
-    
-      <?php
-        session_start();
-        echo '
-        <div class="form">
-          <form method="post" action="new.html.php">
-            <div class="w3-container">
-              <div>
-                <label class="blue h1">' . $_SESSION["username"] . '</label>
-                <input class="blue borderlessInput h1" type="text"></input>
-              </div>
-        ';
-      ?>
-          		<input class="w3-input w3-border w3-round-large w3-margin-bottom" id="username" name="username" type="text">
-          		<span class="red w3-margin-bottom hide" id="usernameNull">&nbsp;* Required field</span>
 
-              <div class="right">
-                <button class="w3-button w3-round-large blue-btn padded" type="submit" name="login" onclick="login()">Login</button>
-                <a class="w3-margin-left cancel" href="main.html.php">Cancel</a>
-              </div>
-            </div>
-          </form>
-        </div>
+		<div class="form">
+			<form method="post" action="new.html.php">
+				<div class="w3-container medium">
+	  			<?php
+	    			session_start();
+	    			echo '
+	      		<label class="blue h1">' . $_SESSION["username"] . '/</label>
+						';
+					?>
+          <input class="blue borderlessInput h1 w3-margin-bottom" type="text" name="newRepoName">
+					<span class="red w3-margin-bottom hide" id="newRepoNameInUse">&nbsp;* That repository name is already in use.</span>
+					<span class="red w3-margin-bottom hide" id="repoNameNull">&nbsp;* Required field.</span>
 
-	</body>
-  <?php
-    include('main/authorize.php');
-  ?>
+					<input class="w3-input w3-border w3-round-large w3-margin-bottom" placeholder="Password" name="password" type="password">
+					<span class="red w3-margin-bottom hide" id="passwordNull">&nbsp;* Required field.</span>
+					<span class="red w3-margin-bottom hide" id="passwordError">&nbsp;* Incorrect password.</span>
+
+					<div class="right">
+						<label for="addReadme">
+							<input class="w3-check w3-margin-bottom" type="checkbox" id="addReadme" onclick="showHideDesc(this)" />
+							Initialize with a README
+						</label>
+
+						<div id="descriptionDiv" style="display: none">
+							<input class="w3-input w3-border w3-round-large w3-margin-bottom" placeholder="Description" name="description">
+						</div>
+					</div>
+
+					<div class="right">
+						<button class="w3-button w3-round-large blue-btn padded" type="submit" name="createNewRepo">Create</button>
+						<a class="w3-margin-left cancel" href="main.html.php">Cancel</a>
+					</div>
+				</form>
+			</div>
+			<?php include('new.php'); ?>
+		</body>
+  <?php include('main/authorize.php'); ?>
+
 </html>

@@ -11,6 +11,9 @@ ul {
 	outline: none;
 	border: 0px;
 }
+.right {
+	align-items: left;
+}
 .h1 {
 	font-size: 32px;
 	font-family: Rockwell;
@@ -68,6 +71,9 @@ h1 {
 }
 .small {
 	max-width: 30%;
+}
+.medium {
+	max-width: 50%;
 }
 .center-div {
 	padding-top: 8%;

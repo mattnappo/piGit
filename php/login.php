@@ -8,8 +8,10 @@
       $rawJSON = fread($myfile, filesize('./users/users.json'));
       $json = json_decode($rawJSON, true);
       foreach ($json["users"] as $key => $value) {
-        if($username == $key && md5($password) == $value) {
+        $pwHash = md5($password);
+        if($username == $key && $pwHash == $value) {
           $_SESSION["username"] = $username;
+          $_SESSION["password"] = $pwHash;
           header("location: main.html.php");
           exit("");
         }
