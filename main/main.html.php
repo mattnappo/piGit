@@ -16,7 +16,6 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/linenum.css">
 
-		<script type="text/javascript" src="new.js"></script>
 		<script src="js/highlight.pack.js"></script>
 	  <script>
 	    hljs.tabReplace = '    ';
@@ -26,17 +25,6 @@
 	</head>
 
   <body>
-
-		<div id="newRepo" class="w3-modal">
-			<div class="w3-modal-content">
-				<div class="w3-container">
-					<span onclick="document.getElementById('newRepo').style.display='none'"
-					class="w3-button w3-display-topright">&times;</span>
-					<!-- Put new repo code here -->
-					new repo code
-				</div>
-			</div>
-		</div>
 
 		<div class="w3-row">
 

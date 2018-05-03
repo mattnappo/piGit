@@ -23,7 +23,7 @@
 		if(isset($_GET['showf'])) {
 			echo '
 			<h4>
-				<a class="repo">Files</a> |
+				<span class="reponoHover">Files</span> |
 				<a class="repo" href="main.html.php?selectedRepo=' . $_GET["selectedRepo"] . '">Repositories</a>
 			</h4>
 			';

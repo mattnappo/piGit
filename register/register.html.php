@@ -3,7 +3,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-		<script src="register.js"></script>
+		<script src="js/register.js"></script>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="css/style.css">
 
@@ -16,12 +16,6 @@
 		    <div class="w3-container">
 	      	<span name="close" onclick="document.getElementById('registerSuccess').style.display = 'none'"
 					class="w3-button w3-display-topright">&times;</span>
-					<?php
-						if(isset($_POST['close'])) {
-							echo '<script>alert("asdasda");</script>';
-							//header("location: login.html.php");
-						}
-					?>
 		      <p>Account successfully created.</p>
 		    </div>
 		  </div>

@@ -3,8 +3,8 @@
   $clickScript = "document.getElementById('newRepo').style.display = 'block'";
   echo '
     <h4>
-      <a class="repo">Repositories</a> |
-      <a class="repo" onclick="' . $clickScript . '">New</a>
+      <span class="reponoHover">Repositories</span> |
+      <a class="repo" href="new.html.php">New Repo</a>
     </h4>
   ';
   $location = "users/" . $_SESSION['username'] . "/";
