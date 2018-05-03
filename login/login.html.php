@@ -1,8 +1,8 @@
 <html lang="en">
 	<head>
-		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
 
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="../css/style.css">
@@ -33,7 +33,7 @@
 
 				<button class="w3-button w3-round-large blue-btn padded" type="submit" name="login">Login</button>
 				<p>
-					Need an account? <a href="register.html.php">Register Here</a>.
+					Need an account? <a href="../register/">Register Here</a>.
 				</p>
 		</div>
 	</body>

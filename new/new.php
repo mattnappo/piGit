@@ -6,7 +6,7 @@
     // echo $newRepoName . " $ " . $description . " $ password: " . $password . ". $ session password: " . $_SESSION['password'];
     if(!empty($newRepoName) && !empty($password)) {
       if($_SESSION['password'] == md5($password)) {
-        $dir = 'users/' . $_SESSION["username"] . '/' . $newRepoName;
+        $dir = '../main/users/' . $_SESSION["username"] . '/' . $newRepoName;
         if (!file_exists($dir)) {
             mkdir($dir);
         } else {

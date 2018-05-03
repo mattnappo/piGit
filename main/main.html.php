@@ -2,21 +2,21 @@
 	<head>
 		<title>PiGit | Control Panel</title>
 
-		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 		<!-- <link rel="stylesheet" href="css/linenum/default.css"> -->
-		<link rel="stylesheet" href="css/linenum/docco.css">
+		<link rel="stylesheet" href="../css/linenum/docco.css">
 		<!-- <link rel="stylesheet" href="css/linenum/mono-blue.css"> -->
 
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/linenum.css">
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/linenum.css">
 
-		<script src="js/highlight.pack.js"></script>
+		<script src="../js/highlight.pack.js"></script>
 	  <script>
 	    hljs.tabReplace = '    ';
 	    hljs.initHighlightingOnLoad();
@@ -33,9 +33,9 @@
 				<?php
 					session_start();
 					if(isset($_GET['showf'])) {
-						include("main/listFiles.php");
+						include("listFiles.php");
 					} else {
-						include("main/listRepos.php");
+						include("listRepos.php");
 					}
 				?>
 			</div>
@@ -44,17 +44,17 @@
 				<div class="w3-container">
 					<?php
 						if(!isset($_GET['showf'])) {
-							include("main/listFiles.php");
+							include("listFiles.php");
 						}
 					?>
 				</div>
 
 				<div class="w3-container">
-					<?php include("main/showFile.php"); ?>
+					<?php include("showFile.php"); ?>
 				</div>
   		</div>
 
 		</div>
   </body>
-	<?php include("main/authorize.php"); ?>
+	<?php include("authorize.php"); ?>
 </html>

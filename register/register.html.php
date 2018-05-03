@@ -1,11 +1,11 @@
 <html lang="en">
 	<head>
-		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-		<script src="js/register.js"></script>
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+		<script src="../js/register.js"></script>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="../css/style.css">
 
 		<title>PiGit | Register</title>
 	</head>
@@ -20,6 +20,16 @@
 		    </div>
 		  </div>
 		</div>
+		<div id="usernameTaken" class="w3-modal">
+			<div class="w3-modal-content">
+				<div class="w3-container">
+					<span name="close" onclick="document.getElementById('usernameTaken').style.display = 'none'"
+					class="w3-button w3-display-topright">&times;</span>
+					<p>That username is already taken.</p>
+				</div>
+			</div>
+		</div>
+
 
 		<div class="w3-container small center-div">
       <form method="post" action="register.html.php">
@@ -39,7 +49,7 @@
   			<button class="w3-button w3-round-large blue-btn padded" type="submit" name="register" onclick="register()">Register</button>
   		</form>
 			<p>
-				Have an account? <a href="login.html.php">Login Here</a>.
+				Have an account? <a href="../login/">Login Here</a>.
 			</p>
 		</div>
 

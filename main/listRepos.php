@@ -1,15 +1,33 @@
 <?php
   //<a class="repo" href="new.html.php">New</a>
   $clickScript = "document.getElementById('newRepo').style.display = 'block'";
-  echo '
-    <h4>
-      <span class="reponoHover">Repositories</span> |
-      <a class="repo" href="new.html.php">New Repo</a>
-    </h4>
-  ';
-  $location = "users/" . $_SESSION['username'] . "/";
-  $repos = scandir($location);
-  echo '<link rel="stylesheet" href="css/style.css">';
+
+  $dir = "";
+  $repos = array();
+
+  if(isset($_SESSION['previousLoc'])) {
+    if($_SESSION['previousLoc'] == "new") {
+      echo '
+        <h4>
+          <a class="repo" href="../main/">Repositories</a> |
+          <a class="repo" href="new/">New Repo</a>
+        </h4>
+        ';
+        $dir = '../main/users/' . $_SESSION["username"] . '/';
+        $repos = scandir($dir);
+    }
+  } else {
+    echo '
+      <h4>
+        <span class="reponoHover">Repositories</span> |
+        <a class="repo" href="../new/">New Repo</a>
+      </h4>
+      ';
+      $dir = 'main/users/' . $_SESSION["username"] . '/';
+      $repos = scandir($dir);
+  }
+
+  echo '<link rel="stylesheet" href="../css/style.css">';
   echo '<ul>';
   for($i = 2; $i < sizeof($repos); $i++) {
     echo '

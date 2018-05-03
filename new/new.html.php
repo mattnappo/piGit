@@ -1,23 +1,23 @@
 <html lang="en">
 	<head>
-		<title>PiGit | Control Panel</title>
+		<title>PiGit | New Repo</title>
 
-		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 		<!-- <link rel="stylesheet" href="css/linenum/default.css"> -->
-		<link rel="stylesheet" href="css/linenum/docco.css">
+		<link rel="stylesheet" href="../css/linenum/docco.css">
 		<!-- <link rel="stylesheet" href="css/linenum/mono-blue.css"> -->
 
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/linenum.css">
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/linenum.css">
 
-		<script src="js/highlight.pack.js"></script>
-		<script type="text/javascript" src="./js/new.js"></script>
+		<script src="../js/highlight.pack.js"></script>
+		<script type="text/javascript" src="../js/new.js"></script>
 	  <script>
 	    hljs.tabReplace = '    ';
 	    hljs.initHighlightingOnLoad();
@@ -33,11 +33,7 @@
 				<h1>PiGit</h1>
 				<?php
 					session_start();
-					if(isset($_GET['showf'])) {
-						include("main/listFiles.php");
-					} else {
-						include("main/listRepos.php");
-					}
+					include("../main/listRepos.php");
 				?>
 			</div>
 
@@ -73,7 +69,7 @@
 
 								<div class="right">
 									<button class="w3-button w3-round-large blue-btn padded" type="submit" name="createNewRepo">Create</button>
-									<a class="w3-margin-left cancel" href="main.html.php">Cancel</a>
+									<a class="w3-margin-left cancel" href="../main/">Cancel</a>
 								</div>
 							</form>
 						</div>
@@ -83,5 +79,5 @@
 
 		</div>
   </body>
-	<?php include("main/authorize.php"); ?>
+	<?php include("../main/authorize.php"); ?>
 </html>

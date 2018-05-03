@@ -1,23 +1,36 @@
 <?php
+  $servername = "localhost";
+  $serverUser = "root";
+  $dbName = "main_db";
+  $serverPass = "";
+
   session_start();
   if(isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if(!empty($username) && !empty($password)) {
-      $myfile = fopen('users/users.json', 'r') or die('Error loading database');
-      $rawJSON = fread($myfile, filesize('./users/users.json'));
-      $json = json_decode($rawJSON, true);
-      foreach ($json["users"] as $key => $value) {
-        $pwHash = md5($password);
-        if($username == $key && $pwHash == $value) {
-          $_SESSION["username"] = $username;
-          $_SESSION["password"] = $pwHash;
-          header("location: main.html.php");
-          exit("");
+      $hashed_password = md5($password);
+      $connection = new mysqli($servername, $serverUser, $serverPass, $dbName);
+      if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+      }
+      $auth = false;
+      $sql = "SELECT id, username, password FROM git";
+      $result = $connection->query($sql);
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          if($row['username'] == $username && $row['password'] == $hashed_password) {
+            $auth = true;
+            $_SESSION["username"] = $username;
+            $_SESSION["password"] = $hashed_password;
+            header("location: ../main/");
+          }
+        }
+        if($auth == false) {
+          echo '<script>document.getElementById("loginError").style.display = "block";</script>';
         }
       }
-      echo '<script>document.getElementById("loginError").style.display = "block";</script>';
-      fclose($myfile);
+      $connection->close();
     } else {
       if(empty($username)) {
         echo '<script>document.getElementById("usernameNull").style.display = "block";</script>';
