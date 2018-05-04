@@ -10,7 +10,7 @@
         if(!file_exists($dir)) {
           echo $dir;
           mkdir($dir);
-          // header("location: ../main/");
+          header("location: ../main/");
         } else {
           echo '<script>document.getElementById("newRepoNameInUse").style.display = "block";</script>';
         }

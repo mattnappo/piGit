@@ -1,8 +1,5 @@
 <?php
-	$servername = "localhost";
-	$serverUser = "root";
-	$dbName = "main";
-	$serverPass = "";
+	include("../server.php");
 	if(isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
