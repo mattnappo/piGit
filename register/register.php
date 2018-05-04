@@ -1,15 +1,8 @@
 <?php
-	if(!function_exists("registerAcc")) {
-		function registerAcc() {
-
-		}
-	}
-	//server stuff
 	$servername = "localhost";
 	$serverUser = "root";
-	$dbName = "main_db";
+	$dbName = "main";
 	$serverPass = "";
-
 	if(isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];

@@ -1,9 +1,8 @@
 <?php
   $servername = "localhost";
   $serverUser = "root";
-  $dbName = "main_db";
+  $dbName = "main";
   $serverPass = "";
-
   session_start();
   if(isset($_POST['login'])) {
     $username = $_POST['username'];
