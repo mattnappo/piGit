@@ -33,6 +33,7 @@
 				<h1>PiGit</h1>
 				<?php
 					session_start();
+					$_SESSION["loc"] = "new";
 					include("../main/listRepos.php");
 				?>
 			</div>
@@ -50,11 +51,11 @@
 								<input class="blue borderlessInput h1 w3-margin-bottom" type="text" name="newRepoName">
 								<input class="w3-input w3-border w3-round-large w3-margin-bottom" placeholder="Password" name="password" type="password">
 
-								<span class="red w3-margin-bottom hide" id="repoNameNull">&nbsp;* Repository name required.</span>
-								<span class="red w3-margin-bottom hide" id="passwordNull">&nbsp;* Password required.</span>
+								<span class="red w3-margin-bottom" id="repoNameNull" style="display: none">&nbsp;* Repository name required.</span>
+								<span class="red w3-margin-bottom" id="passwordNull" style="display: none">&nbsp;* Password required.</span>
 
-								<span class="red hide w3-margin-bottom" id="newRepoNameInUse">&nbsp;* That repository name is already in use.</span>
-								<span class="red w3-margin-bottom hide" id="passwordError">&nbsp;* Incorrect password.</span>
+								<span class="red w3-margin-bottom" id="newRepoNameInUse" style="display: none">&nbsp;* That repository already exists.</span>
+								<span class="red w3-margin-bottom" id="passwordError" style="display: none">&nbsp;* Incorrect password.</span>
 
 								<div class="right">
 									<label for="addReadme">
@@ -78,6 +79,10 @@
   		</div>
 
 		</div>
+		<script>
+			// document.getElementById("repoNameNull").style.display = "none";
+			// document.getElementById("passwordNull").style.display = "none";
+		</script>
   </body>
 	<?php include("../main/authorize.php"); ?>
 </html>

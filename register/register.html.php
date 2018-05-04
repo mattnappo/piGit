@@ -3,9 +3,6 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
-		<script src="../js/register.js"></script>
-
-
 
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="../css/style.css">
@@ -49,14 +46,13 @@
   			<span class="red w3-margin-bottom hide" id="passwordMatchError">&nbsp;* Passwords do not match</span>
 
   			<input class="w3-input w3-border w3-round-large w3-margin-bottom" id="confirmpw" name="confirmpw" placeholder="Confirm Password" type="password">
-  			<button class="w3-button w3-round-large blue-btn padded" type="submit" name="register" onclick="">Register</button>
+  			<button class="w3-button w3-round-large blue-btn padded" type="submit" name="register">Register</button>
   		</form>
 			<p>
 				Have an account? <a href="../login/">Login Here</a>.
 			</p>
 		</div>
 		<script>
-			register();
 		</script>
 	</body>
   <?php include('register.php'); ?>

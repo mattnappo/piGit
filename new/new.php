@@ -3,12 +3,14 @@
     $newRepoName = $_POST['newRepoName'];
     $description = $_POST['description'];
     $password = $_POST['password'];
-    // echo $newRepoName . " $ " . $description . " $ password: " . $password . ". $ session password: " . $_SESSION['password'];
+    // echo $newRepoName . "\n" . $description . "\npassword: " . $password . "\nsession password: " . $_SESSION['password'];
     if(!empty($newRepoName) && !empty($password)) {
       if($_SESSION['password'] == md5($password)) {
         $dir = '../main/users/' . $_SESSION["username"] . '/' . $newRepoName;
-        if (!file_exists($dir)) {
-            mkdir($dir);
+        if(!file_exists($dir)) {
+          echo $dir;
+          mkdir($dir);
+          // header("location: ../main/");
         } else {
           echo '<script>document.getElementById("newRepoNameInUse").style.display = "block";</script>';
         }

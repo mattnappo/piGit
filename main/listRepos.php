@@ -5,17 +5,16 @@
   $dir = "";
   $repos = array();
 
-  if(isset($_SESSION['previousLoc'])) {
-    if($_SESSION['previousLoc'] == "new") {
-      echo '
-        <h4>
-          <a class="repo" href="../main/">Repositories</a> |
-          <a class="repo" href="new/">New Repo</a>
-        </h4>
-        ';
-        $dir = '../main/users/' . $_SESSION["username"] . '/';
-        $repos = scandir($dir);
-    }
+  if(isset($_SESSION['loc']) && $_SESSION['loc'] == "new") {
+    echo '
+      <h4>
+        <a class="repo" href="../main/">Repositories</a> |
+        <a class="repo" href="new/">New Repo</a>
+      </h4>
+      ';
+      $dir = '../main/users/' . $_SESSION["username"] . '/';
+      $repos = scandir($dir);
+      $_SESSION["loc"] = "notnew";
   } else {
     echo '
       <h4>
@@ -23,7 +22,7 @@
         <a class="repo" href="../new/">New Repo</a>
       </h4>
       ';
-      $dir = 'main/users/' . $_SESSION["username"] . '/';
+      $dir = 'users/' . $_SESSION["username"] . '/';
       $repos = scandir($dir);
   }
 
